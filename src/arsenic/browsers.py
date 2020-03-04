@@ -11,15 +11,14 @@ class Browser:
 
 class Frowser(Browser):
     def __init__(self, foptions, **args):
-      self.capabilities = {**self.defaults, foptions, **args}
+      self.capabilities = {"alwaysMatch":{**self.defaults, **foptions, **args}}
 
 
 class Firefox(Frowser):
     capabilitieskey= 'capabilities'
-    defaults = {"alwaysMatch":{
-                                "browserName": "firefox",
-                                "acceptInsecureCerts": True,
-                                }
+    defaults = {
+               "browserName": "firefox",
+               "acceptInsecureCerts": True,
     }
 
 
