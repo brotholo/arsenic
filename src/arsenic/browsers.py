@@ -12,10 +12,11 @@ class Browser:
 
 class Firefox(Browser):
     capabilitieskey= 'capabilities'
-    defaults = {
-        "browserName": "firefox",
-        #"marionette": True,
-        "acceptInsecureCerts": True,
+    
+    defaults = {"alwaysMatch":{
+                                "browserName": "firefox",
+                                "acceptInsecureCerts": True,
+                                }
     }
 
 
