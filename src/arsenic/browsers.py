@@ -4,15 +4,17 @@ from arsenic.session import Session, CompatSession
 class Browser:
     defaults = {}
     session_class = Session
+    capabilitieskey= 'desiredCapabilities'
 
     def __init__(self, **overrides):
         self.capabilities = {**self.defaults, **overrides}
 
 
 class Firefox(Browser):
+    capabilitieskey= 'capabilities'
     defaults = {
         "browserName": "firefox",
-        "marionette": True,
+        #"marionette": True,
         "acceptInsecureCerts": True,
     }
 
