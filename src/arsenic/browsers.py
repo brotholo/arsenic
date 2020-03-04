@@ -9,12 +9,15 @@ class Browser:
     def __init__(self, **overrides):
         self.capabilities = {**self.defaults, **overrides}
 
+class Frowser(Browser):
+    def __init__(self, foptions, **args):
+      self.capabilities = {**self.defaults, foptions, **args}
 
-class Firefox(Browser):
+
+class Firefox(Frowser):
     capabilitieskey= 'capabilities'
     defaults = {
         "browserName": "firefox",
-        #"marionette": True,
         "acceptInsecureCerts": True,
     }
 
